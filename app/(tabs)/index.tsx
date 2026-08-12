@@ -58,8 +58,7 @@ export default function HomeScreen() {
         >
           <Text style={styles.ctaText}>Start My Check-in</Text>
         </Pressable>
-        <Text style={styles.ctaCaption}>~60 SECONDS · 7 QUESTIONS</Text>
-
+        {/*<Text style={styles.ctaCaption}>~60 SECONDS · 7 QUESTIONS</Text>*/}
         <View style={styles.featureList}>
           {FEATURES.map((f) => (
             <View key={f.text} style={styles.featureRow}>
