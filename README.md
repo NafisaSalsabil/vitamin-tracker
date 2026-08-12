@@ -1,50 +1,154 @@
-# Welcome to your Expo app 👋
+# Vitamin Tracker
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A mobile vitamin and supplement tracking app built with **React Native and Expo**. It helps users check in on how they're feeling and view personalized results about their possible vitamin deficiencies.
 
-## Get started
+## 🛠️ Tech Stack
 
-1. Install dependencies
+### Frontend
 
-   ```bash
-   npm install
-   ```
+* React Native
+* Expo
+* Expo Router
+* TypeScript
+* JavaScript
+* React
 
-2. Start the app
+### Backend
 
-   ```bash
-   npx expo start
-   ```
+* Node.js
+* Express
 
-In the output, you'll find options to open the app in a
+### Development Tools
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+* npm
+* Git / GitHub
+* VS Code
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 📁 Project Structure
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```text
+vitamin-tracker/
+├── app/                    # Application screens and Expo Router routes
+│   ├── (tabs)/             # Main tab-based screens
+│   ├── results.tsx         # Results screen
+│   └── _layout.tsx         # Root navigation layout
+├── backend/                # Node.js backend
+│   ├── server.js
+│   ├── package.json
+│   └── .gitignore
+├── components/             # Reusable React Native components
+├── constants/              # App constants and theme colors
+├── hooks/                  # Custom React hooks
+├── utils/                  # Utility functions and local storage helpers
+├── assets/                 # Images and fonts
+├── app.json                # Expo configuration
+├── package.json            # Frontend dependencies and scripts
+└── tsconfig.json           # TypeScript configuration
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🚀 Getting Started
 
-## Learn more
+### Prerequisites
 
-To learn more about developing your project with Expo, look at the following resources:
+Make sure you have installed:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+* [Node.js](https://nodejs.org/)
+* npm
+* Expo-compatible development environment
+* Expo Go, Android Studio, or an iOS simulator if you want to run the mobile app
 
-## Join the community
+### 1. Clone the repository
 
-Join our community of developers creating universal apps.
+```bash
+git clone https://github.com/NafisaSalsabil/vitamin-tracker.git
+cd vitamin-tracker
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### 2. Install frontend dependencies
+
+```bash
+npm install
+```
+
+### 3. Start the Expo development server
+
+```bash
+npx expo start
+```
+
+From the Expo CLI, you can open the application using:
+
+* Expo Go
+* Android emulator
+* iOS simulator
+* Development build
+
+## 🔐 Environment Variables
+
+This project may use environment variables for configuration and API credentials.
+
+Create a local `.env` file when required:
+
+```env
+YOUR_VARIABLE_NAME=your_value
+```
+
+**Never commit `.env` files or API keys to GitHub.**
+
+The repository's `.gitignore` is configured to exclude environment files.
+
+## 🖥️ Running the Backend
+
+Navigate to the backend directory:
+
+```bash
+cd backend
+npm install
+```
+
+Then start the backend using the appropriate script defined in `backend/package.json`.
+
+```bash
+npm start
+```
+
+If the backend requires environment variables, configure them locally before starting the server.
+
+## 🧪 Development
+
+The main application screens are located inside the `app/` directory.
+
+With Expo running, changes to the source code can be reflected in the development application through Expo's development workflow.
+
+Useful commands:
+
+```bash
+# Install dependencies
+npm install
+
+# Start Expo
+npx expo start
+
+# Start with a cleared cache
+npx expo start -c
+```
+
+## 🔒 Privacy & Security
+
+Vitamin Tracker may handle personal health-related information entered by users. Do not commit private user information, API credentials, authentication tokens, or other secrets to the repository.
+
+Environment variables should be stored locally and excluded from version control.
+
+## 📌 Project Status
+
+🚧 **In development**
+
+This project is actively being developed and may continue to receive improvements to its interface, tracking functionality, backend integration, and user experience.
+
+## 👩‍💻 Author
+
+**Nafisa Salsabil**
+
+GitHub: [NafisaSalsabil](https://github.com/NafisaSalsabil)
+
+
