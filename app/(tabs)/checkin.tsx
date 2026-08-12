@@ -9,6 +9,7 @@ import {
 
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
+import { useColorScheme } from "@/hooks/useColorScheme";
 
 // IMPORTANT: 'localhost' only works when testing in a web browser.
 // If you're testing on a physical phone via Expo Go, replace this with
@@ -17,6 +18,7 @@ import { ThemedView } from "@/components/ThemedView";
 const API_URL = "http://localhost:3000/api/ai-symptoms";
 
 export default function CheckInScreen() {
+  const colorScheme = useColorScheme();
   const [symptomText, setSymptomText] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -69,11 +71,17 @@ export default function CheckInScreen() {
       </ThemedText>
 
       <TextInput
-        style={styles.input}
+        style={[
+          styles.input,
+          {
+            color: colorScheme === "dark" ? "#fff" : "#000",
+            borderColor: colorScheme === "dark" ? "#3A5C52" : "#C8E8E0",
+          },
+        ]}
         multiline
         numberOfLines={5}
         placeholder="e.g. fatigue, brittle nails, low mood..."
-        placeholderTextColor="#888"
+        placeholderTextColor={colorScheme === "dark" ? "#999" : "#888"}
         value={symptomText}
         onChangeText={setSymptomText}
         editable={!loading}
@@ -112,13 +120,11 @@ const styles = StyleSheet.create({
   },
   input: {
     borderWidth: 1,
-    borderColor: "#C8E8E0",
     borderRadius: 10,
     padding: 14,
     fontSize: 16,
     minHeight: 120,
     textAlignVertical: "top",
-    color: "#000",
   },
   error: {
     color: "#D14343",
